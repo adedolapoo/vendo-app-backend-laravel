@@ -1,0 +1,25 @@
+{
+    "name": "/products",
+    "description": "",
+    "authors": [
+        {
+            "name": "Adedolapo",
+            "email": "adedolapoo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Products\\Providers\\ProductsServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Products\\": ""
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<?php namespace $NAMESPACE$;
+
+use Modules\Core\Entities\Base;
+use Modules\Core\Presenters\PresentableTrait;
+
+class $CLASS$ extends Base {
+
+    use PresentableTrait;
+
+    protected $presenter = '$MODULE_NAMESPACE$\$STUDLY_NAME$\Presenters\ModulePresenter';
+
+    protected $fillable = [];
+
+}

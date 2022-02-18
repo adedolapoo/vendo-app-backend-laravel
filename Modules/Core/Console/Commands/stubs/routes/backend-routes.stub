@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::bind('$SINGULAR_LOWER_NAME$', function ($id) {
+    return app($MODULE_NAMESPACE$\$STUDLY_NAME$\Repositories\$SINGULAR_STUDLY_NAME$Interface::class)->byId($id);
+});
+
+Route::group(['prefix' => '$LOWER_NAME$'], function () {
+    Route::get('/', [
+        'as' => 'admin.$LOWER_NAME$.index',
+        'uses' => '$STUDLY_NAME$Controller@index'
+    ]);
+    Route::get('create', [
+        'as' => 'admin.$LOWER_NAME$.create',
+        'uses' => '$STUDLY_NAME$Controller@create'
+    ]);
+    Route::get('{$SINGULAR_LOWER_NAME$}/edit', [
+        'as' => 'admin.$LOWER_NAME$.edit',
+        'uses' => '$STUDLY_NAME$Controller@edit'
+    ]);
+    Route::post('/', [
+        'as' => 'admin.$LOWER_NAME$.store',
+        'uses' => '$STUDLY_NAME$Controller@store'
+    ]);
+    Route::put('{$SINGULAR_LOWER_NAME$}', [
+        'as' => 'admin.$LOWER_NAME$.update',
+        'uses' => '$STUDLY_NAME$Controller@update'
+    ]);
+    Route::get('data/table', [
+        'as' => 'admin.$LOWER_NAME$.datatable',
+        'uses' => '$STUDLY_NAME$Controller@dataTable'
+    ]);
+    Route::delete('{$SINGULAR_LOWER_NAME$}', [
+        'as' => 'admin.$LOWER_NAME$.destroy',
+        'uses' => '$STUDLY_NAME$Controller@destroy'
+    ]);
+});

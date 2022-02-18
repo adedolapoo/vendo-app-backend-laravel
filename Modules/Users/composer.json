@@ -1,0 +1,15 @@
+{
+	"name": "adedolapoo/users",
+	"description": "",
+	"authors": [
+		{
+			"name": "Oduguwa Adedolapo",
+			"email": "adedolapoo@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Modules\\Users\\": ""
+		}
+	}
+}

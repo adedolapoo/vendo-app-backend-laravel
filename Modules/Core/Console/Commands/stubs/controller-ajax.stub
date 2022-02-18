@@ -1,0 +1,14 @@
+<?php namespace $CLASS_NAMESPACE$;
+
+use Modules\Core\Http\Controllers\BaseAjaxController;
+use Modules\$NAMESPACE$\Http\Requests\FormRequest;
+use Modules\$NAMESPACE$\Repositories\$SINGULAR_MODULENAME$Interface as Repository;
+
+class $CLASS$ extends BaseAjaxController {
+
+    public function __construct(Repository $repository)
+    {
+        parent::__construct($repository);
+    }
+
+}

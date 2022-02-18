@@ -1,0 +1,11 @@
+<?php
+return array(
+    'group_name'=>'$STUDLY_NAME$',
+    'name'=>'$STUDLY_NAME$',
+    'group_description'=>'use this section to manage all $LOWER_NAME$ e.t.c',
+    'index' => 'All $STUDLY_NAME$',
+    'pages' => '$SINGULAR_LOWER_NAME$|$LOWER_NAME$',
+    'new'  => 'New $SINGULAR_STUDLY_NAME$',
+    'edit' => 'Edit $SINGULAR_STUDLY_NAME$',
+    'back' => 'Back to $STUDLY_NAME$',
+);

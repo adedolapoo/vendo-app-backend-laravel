@@ -1,0 +1,19 @@
+{
+    "name": "Core",
+    "alias": "core",
+    "description": "The core module",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Core\\Providers\\CoreServiceProvider"
+    ],
+    "aliases":{
+        "MyApp" : "Modules\\Core\\Facades\\MyApp"
+    },
+    "files": [
+        "start.php",
+        "helpers.php"
+    ],
+    "requires": []
+}

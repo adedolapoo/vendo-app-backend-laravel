@@ -1,0 +1,14 @@
+<?php namespace $NAMESPACE$;
+
+use Illuminate\Database\Eloquent\Model;
+use Modules\Core\Repositories\RepositoriesAbstract;
+
+class $CLASS$ extends RepositoriesAbstract implements $SINGULAR_MODULENAME$Interface
+{
+
+    public function __construct(Model $model)
+    {
+        $this->model = $model;
+    }
+
+}

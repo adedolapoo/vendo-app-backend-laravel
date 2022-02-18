@@ -1,0 +1,9 @@
+@if(has_access('$LOWER_NAME$.show'))
+    {!! edit_btn(route('admin.$LOWER_NAME$.show',$id)) !!}
+@endif
+@if(has_access('$LOWER_NAME$.edit'))
+    {!! edit_btn(route('admin.$LOWER_NAME$.edit',$id)) !!}
+@endif
+@if(has_access('$LOWER_NAME$.destroy'))
+    {!! delete_btn(route('admin.$LOWER_NAME$.destroy',$id)) !!}
+@endif

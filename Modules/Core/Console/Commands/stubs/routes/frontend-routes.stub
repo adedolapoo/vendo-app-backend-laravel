@@ -1,0 +1,16 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+if ($page = \MyApp::getPageLinkedToModule('$LOWER_NAME$')) {
+    $options = [];
+    if ($uri = $page->uri) {
+        Route::get($uri, $options + ['as' => '$LOWER_NAME$', 'uses' => '$STUDLY_NAME$PublicController@index']);
+        Route::get($uri.'/{slug}', $options +  ['as' => '$LOWER_NAME$.slug', 'uses' => '$STUDLY_NAME$PublicController@show']);
+    }
+}
+
+/*Route::group(['prefix' => '$LOWER_NAME$'], function()
+{
+    Route::get('/', '$STUDLY_NAME$PublicController@index');
+});*/

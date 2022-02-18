@@ -1,0 +1,83 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Database\Eloquent\Factory;
+use Modules\Core\Observers\FileObserver;
+use Modules\Core\Observers\SlugObserver;
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\Entities\$SINGULAR_MODULENAME$;
+use $MODULE_NAMESPACE$\$STUDLY_NAME$\Repositories\Eloquent$SINGULAR_MODULENAME$;
+
+class $CLASS$ extends ServiceProvider
+{
+    /**
+     * @var string $moduleName
+     */
+    protected $moduleName = '$MODULE$';
+
+    /**
+     * @var string $moduleNameLower
+     */
+    protected $moduleNameLower = '$LOWER_NAME$';
+
+    /**
+     * Boot the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->registerConfig();
+        $this->loadMigrationsFrom(module_path($this->moduleName, '$MIGRATIONS_PATH$'));
+
+        AliasLoader::getInstance()->alias(
+            '$STUDLY_NAME$',
+            'Modules\$STUDLY_NAME$\Facades\Facade'
+        );
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $app = $this->app;
+
+        $app->register(RouteServiceProvider::class);
+
+        $app->bind('$MODULE_NAMESPACE$\$STUDLY_NAME$\Repositories\$SINGULAR_MODULENAME$Interface', function (Application $app) {
+            $repository = new Eloquent$SINGULAR_MODULENAME$(new $SINGULAR_MODULENAME$);
+            return $repository;
+        });
+    }
+
+    /**
+     * Register config.
+     *
+     * @return void
+     */
+    protected function registerConfig()
+    {
+        $this->publishes([
+            module_path($this->moduleName, '$PATH_CONFIG$/config.php') => config_path($this->moduleNameLower . '.php'),
+        ], 'config');
+        $this->mergeConfigFrom(
+            module_path($this->moduleName, '$PATH_CONFIG$/config.php'), $this->moduleNameLower
+        );
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [];
+    }
+}

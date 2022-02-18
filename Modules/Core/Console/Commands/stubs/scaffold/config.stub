@@ -1,0 +1,29 @@
+<?php
+
+return [
+	'name' => '$STUDLY_NAME$',
+	'order' => [
+		'id' => 'asc',
+	],
+	'sidebar' => [
+		'weight' => 2,
+		'icon' => 'fa fa-file',
+	],
+	'th' => ['title','status'],
+	'columns'=>[
+            ['data'=>'title','name'=>'title'],
+            ['data'=>'status','name'=>'status'],
+            ['data'=>'action','name'=>'action'],
+     ],
+	'form'=>'$STUDLY_NAME$\Forms\$STUDLY_NAME$Form',
+	'permissions'=>[
+		'$LOWER_NAME$' => [
+			'index',
+			'create',
+			'store',
+			'edit',
+			'update',
+			'destroy',
+		],
+	]
+];

@@ -1,0 +1,20 @@
+{
+    "name": "Users",
+    "alias": "users",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Users\\Providers\\UsersServiceProvider",
+        "Modules\\Users\\Providers\\RouteServiceProvider",
+        "Modules\\Users\\Providers\\AuthServiceProvider"
+    ],
+    "aliases": {
+
+    },
+    "files": [
+        "start.php",
+        "helpers.php"
+    ]
+}

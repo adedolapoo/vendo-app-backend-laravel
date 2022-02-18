@@ -1,0 +1,22 @@
+<?php namespace $NAMESPACE$;
+
+use Modules\Core\Presenters\Presenter;
+
+class $CLASS$  extends Presenter
+{
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function title()
+    {
+        return $this->entity->title;
+    }
+
+    public function url()
+    {
+        return route('$LOWER_NAME$.slug',[$this->entity->slug]);
+    }
+}

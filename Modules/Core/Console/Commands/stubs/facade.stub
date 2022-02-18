@@ -1,0 +1,16 @@
+<?php namespace $NAMESPACE$;
+
+use Illuminate\Support\Facades\Facade as MainFacade;
+
+class $CLASS$ extends MainFacade
+{
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        return 'Modules\$STUDLY_NAME$\Repositories\$SINGULAR_MODULENAME$Interface';
+    }
+}

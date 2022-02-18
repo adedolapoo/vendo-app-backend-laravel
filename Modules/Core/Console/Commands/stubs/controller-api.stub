@@ -1,0 +1,13 @@
+<?php namespace $CLASS_NAMESPACE$;
+
+use Modules\Core\Http\Controllers\BaseController;
+use Modules\$NAMESPACE$\Repositories\$SINGULAR_MODULENAME$Interface as Repository;
+
+class $CLASS$ extends BaseController {
+
+    public function __construct(Repository $repository)
+    {
+        parent::__construct($repository);
+    }
+
+}

@@ -1,0 +1,8 @@
+<?php
+/** @var \Dingo\Api\Routing\Router $api */
+$api = app('Dingo\Api\Routing\Router');
+
+$api->group(['middleware'=>'api.auth','prefix' => '$LOWER_NAME$'], function($api)
+{
+    $api->get('/', '$STUDLY_NAME$ApiController@getAll');
+});
