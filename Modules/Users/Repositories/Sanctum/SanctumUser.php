@@ -41,7 +41,7 @@ class SanctumUser extends RepositoriesAbstract implements UserInterface
      */
     public function create(array $data)
     {
-        $data['role'] = empty($data['role']) ? 'user' : $data['role'];
+        $data['role'] = empty($data['role']) ? 'buyer' : $data['role'];
 
         $this->hashPassword($data);
 

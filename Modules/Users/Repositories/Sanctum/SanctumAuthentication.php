@@ -25,7 +25,7 @@ class SanctumAuthentication implements AuthenticationInterface
 
         //check to confirm if a user currently has a token
         if($user->tokens()->count()){
-            throw new \Exception('There is already an active session using your account');
+           // throw new \Exception('There is already an active session using your account');
         }
 
         $token = $user->createToken('VendoApp')->plainTextToken;

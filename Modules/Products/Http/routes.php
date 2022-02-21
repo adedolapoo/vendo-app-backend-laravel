@@ -6,10 +6,11 @@ use Modules\Products\Http\Controllers\ProductsController;
 
 Route::group(['prefix' => 'products'], function () {
     //anybody
-    Route::get('/', [ProductsController::class, 'index']);
-    Route::get('/{id}', [ProductsController::class, 'show']);
 
     Route::group(['middleware' => [config('core.auth_middleware')]], function () {
+
+        Route::get('/', [ProductsController::class, 'index']);
+        Route::get('/{id}', [ProductsController::class, 'show']);
 
         //Only seller can access this routes
         Route::group(['middleware'=>'can:isSeller'], function () {

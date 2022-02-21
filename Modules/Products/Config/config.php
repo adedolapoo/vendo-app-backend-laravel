@@ -2,4 +2,7 @@
 
 return [
 	'name' => 'Products',
+    'order' => [
+        'id' => 'desc',
+    ]
 ];

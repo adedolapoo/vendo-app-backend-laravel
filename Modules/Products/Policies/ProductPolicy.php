@@ -17,4 +17,14 @@ class ProductPolicy
     {
         return optional($user)->id === $product->seller_id;
     }
+
+    /**
+     * @param User $user
+     * @param Product $product
+     * @return bool
+     */
+    public function delete(User $user, Product $product)
+    {
+        return optional($user)->id === $product->seller_id;
+    }
 }

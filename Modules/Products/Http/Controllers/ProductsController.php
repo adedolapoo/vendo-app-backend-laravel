@@ -1,6 +1,7 @@
 <?php namespace Modules\Products\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Modules\Core\Http\Controllers\BaseController;
 use Modules\Products\Http\Requests\FormRequest;
 use Modules\Products\Repositories\ProductInterface as Repository;
@@ -18,10 +19,11 @@ class ProductsController extends BaseController
      *
      * @return JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $products = $this->repository->allPaginated();
+            $seller_id = $request->user()->role === 'seller' ? $request->user()->id : null;
+            $products = $this->repository->allPaginatedForSeller($seller_id);
 
             return $this->respondWithCollection($products);
         } catch (\Exception $e) {

@@ -38,7 +38,7 @@ class DepositController extends BaseController
     }
 
     /**
-     * Deposit For user
+     * Reset Deposit For user
      *
      * @param Request $request
      * @return JsonResponse

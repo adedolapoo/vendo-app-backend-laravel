@@ -1,5 +1,6 @@
 <?php namespace Modules\Products\Entities;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Core\Entities\Base;
 use Modules\Core\Presenters\PresentableTrait;
@@ -26,4 +27,12 @@ class Product extends Base {
         return ProductFactory::new();
     }
 
+    /**
+     * @param Builder $query
+     * @return Builder
+     */
+    public function scopeSort(Builder $query)
+    {
+        return $query->orderByDesc('id');
+    }
 }
